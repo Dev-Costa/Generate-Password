@@ -9,9 +9,10 @@ terms = letters + numbers
 password = ""
 for i in range(size):
 	random_index = randint(0, len(terms) - i)
-	while (terms[random_index] in password):
-		random_index = randint(0, len(terms) - i)
+	random_c = terms[random_index]
 
-	password += terms[random_index]
+	password += random_c
+
+	terms = terms.replace(random_c, "")
 
 print(password)
